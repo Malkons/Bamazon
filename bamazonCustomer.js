@@ -65,8 +65,6 @@ function start() {
             for (var i = 0; i < res.length; i++) {
                 if (res[i].id === parseInt(answer.id)) {
                     chosenItem = res[i];
-
-                    //console.log("You have chosen to purchase: " + chosenItem.product_name);
                     checkStock(parseInt(answer.id), answer.units);
                 }
             }
@@ -120,7 +118,23 @@ function cost(itemID, units) {
 
         var totalCost = res[0].price * units;
         console.log("Total cost is $ " + totalCost);
-        start();
+        restart();
     });
 }
 
+function restart() {
+    inquirer.prompt({
+        name: "shopOrExit",
+        type: "rawlist",
+        message: "Would you like to [Shop] or [EXIT]?",
+        choices: ["SHOP", "EXIT"]
+      })
+      .then(function(answer) {
+        if (answer.shopOrExit.toUpperCase() === "SHOP") {
+          start();
+        }
+        else {
+          connection.end();
+        }
+      });
+  }
