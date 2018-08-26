@@ -14,6 +14,7 @@ In order to get started you will need to have a few things:
 5.  If you haven't already: [https://docs.npmjs.com/cli/install](https://docs.npmjs.com/cli/install)
 6.  At the command line use node bamazonCustomer.js to start
 
-## Screenshots
+## Screenshot
+Using node bamazonCustomer.js a table is created showing the inventory of the store.  The customer places an order, the program checks the stock levels to determine if there is sufficent inventory and then places the order.  After which the customer is given the option to continue shopping or exit the app.
 
-![Alt Text]()
+![screenshot 16](https://user-images.githubusercontent.com/37887685/44624482-b59f0280-a8a4-11e8-8bd2-64c75245517a.png)
