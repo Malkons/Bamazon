@@ -117,6 +117,8 @@ function cost(itemID, units) {
         if (err) throw err;
 
         var totalCost = res[0].price * units;
+        
+        console.log("You Purchased: " + units + " " + res[0].product_name);
         console.log("Total cost is $ " + totalCost);
         restart();
     });
